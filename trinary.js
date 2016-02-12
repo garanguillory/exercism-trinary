@@ -1,36 +1,30 @@
-
 var Trinary = function(input){
 
 	this.toDecimal = function(){
-		var array = input.split('').reverse();
-		var numbers =
-				array.map(function(element){
-					return Number(element);
-				});
-		var subs = 
-				numbers.map(function(element,index){
-						return element * (Math.pow(3,index));
-				});
-		var answer = 
-				subs.reduce(function(accum, curr){
-						return accum + curr;
-				});
-		return answer;
+		if(Boolean(Number(input))){
+				var array = input.split('').reverse();
+				var numbers =
+						array.map(function(element){
+							return Number(element);
+						});
+				var subs = 
+						numbers.map(function(element,index){
+								return element * (Math.pow(3,index));
+						});
+				var answer = 
+						subs.reduce(function(accum, curr){
+								return accum + curr;
+						});
+				return answer;
+		} else {
+			return 0;
+		}
 	};
 
 };
 
 
-
 module.exports = Trinary;
-
-
-		// var subs = 
-		// 		numbers.reduce(function(accum,curr,index){
-		// 				return element * (Math.pow(3,numbers[index]));
-		// 		});
-
-
 
 // get length of input
 // convert strings to numbers
